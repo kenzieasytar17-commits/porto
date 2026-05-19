@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sertifikat Keahlian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f8fafc; }
+        .glass-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: scale(1.03);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        .cert-glow {
+            filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+        }
+    </style>
+</head>
+<body class="py-24 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+    <div class="max-w-5xl mx-auto px-4">
+        <div class="flex items-center justify-center gap-4 mb-16">
+            <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-blue-500/50"></div>
+            <h2 class="text-4xl font-bold text-blue-400 tracking-widest uppercase">Pencapaian</h2>
+            <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-blue-500/50"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card p-10 rounded-3xl relative overflow-hidden group">
+                <div class="absolute -right-4 -bottom-4 opacity-[0.03] transform rotate-12 transition-transform group-hover:scale-110">
+                    <i class="fas fa-basketball-ball text-[12rem]"></i>
+                </div>
+                <div class="flex flex-col h-full">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/30 cert-glow">
+                        <i class="fas fa-trophy text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Prestasi Atletik Basket</h3>
+                    <p class="text-blue-400 text-xs font-black uppercase tracking-widest mb-4">Lomba Antar Sekolah • 2025</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-auto">Sertifikat penghargaan atas kontribusi tim dan performa individu dalam kompetisi basket tingkat menengah.</p>
+                </div>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl relative overflow-hidden group">
+                <div class="absolute -right-4 -bottom-4 opacity-[0.03] transform rotate-12 transition-transform group-hover:scale-110">
+                    <i class="fas fa-award text-[12rem]"></i>
+                </div>
+                <div class="flex flex-col h-full">
+                    <div class="w-16 h-16 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/30 cert-glow">
+                        <i class="fas fa-medal text-purple-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2 leading-tight">Akademik 10 Besar</h3>
+                    <p class="text-purple-400 text-xs font-black uppercase tracking-widest mb-4">SMAN 45 Jakarta • Kelas XI SMT 1</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-auto">Penghargaan peringkat 10 besar paralel atas dedikasi dan konsistensi dalam performa akademik di sekolah.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
