@@ -8,7 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f8fafc; overflow-x: hidden; }
+        
+        body { 
+            font-family: 'Space Grotesk', sans-serif; 
+            background-color: #020617; 
+            color: #f8fafc; 
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
         
         .glass-card {
             background: rgba(15, 23, 42, 0.6);
@@ -38,12 +45,40 @@
             border-color: rgba(59, 130, 246, 0.5);
             color: white;
         }
+        .glow-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.6); }
     </style>
 </head>
-<body class="py-24 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950">
+<body class="pt-28 pb-24 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-blue-500/20 px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold text-blue-400 tracking-tighter glow-text">ASTRO<span class="text-white">PORT</span></div>
+        <div class="hidden md:flex space-x-4 text-sm items-center">
+            <a href="profil.html" class="px-4 py-1.5 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-white/5 transition">Profil</a>
+            <a href="cv.html" class="px-4 py-1.5 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-white/5 transition">CV</a>
+            <a href="karya.html" class="px-4 py-1.5 rounded-lg text-blue-400 bg-blue-500/10 border border-blue-500/30 transition shadow-[0_0_15px_rgba(59,130,246,0.2)]">Karya</a>
+            <a href="sertifikat.html" class="px-4 py-1.5 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-white/5 transition">Sertifikat</a>
+            <a href="refleksi.html" class="px-4 py-1.5 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-white/5 transition">Refleksi</a>
+            <a href="kontak.html" class="ml-4 px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold transition shadow-lg shadow-blue-500/30">Hubungi Saya</a>
+        </div>
+        <button class="md:hidden text-white hover:text-blue-400 transition" onclick="toggleMenu()">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden fixed top-[64px] left-0 w-full bg-slate-950/95 backdrop-blur-lg border-b border-blue-500/20 z-40 md:hidden flex flex-col p-6 space-y-4">
+        <a href="profil.html" class="text-gray-300 hover:text-blue-400">Profil</a>
+        <a href="cv.html" class="text-gray-300 hover:text-blue-400">CV</a>
+        <a href="karya.html" class="text-blue-400 font-bold">Karya</a>
+        <a href="sertifikat.html" class="text-gray-300 hover:text-blue-400">Sertifikat</a>
+        <a href="refleksi.html" class="text-gray-300 hover:text-blue-400">Refleksi</a>
+        <a href="kontak.html" class="text-white bg-blue-600 text-center py-2.5 rounded-full font-bold">Hubungi Saya</a>
+    </div>
+
     <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-20">
-            <h2 class="text-5xl font-bold text-white mb-4 tracking-tighter">Proyek Antarbintang</h2>
+            <h2 class="text-5xl font-bold text-white mb-4 tracking-tighter glow-text">Proyek Antarbintang</h2>
             <p class="text-blue-400 font-medium tracking-widest uppercase text-sm">Eksperimen & Manifestasi Kode</p>
         </div>
 
@@ -55,7 +90,7 @@
                     <div class="absolute bottom-4 right-6 text-white/5 font-black text-6xl italic">01</div>
                 </div>
                 <div class="p-10">
-                    <h3 class="font-bold text-3xl mb-4 text-white group-hover:text-blue-400 transition">proyek 1</h3>
+                    <h3 class="font-bold text-3xl mb-4 text-white group-hover:text-blue-400 transition">Stellar Pay</h3>
                     <p class="text-gray-400 leading-relaxed mb-8">Arsitektur sistem pembayaran blockchain yang mengedepankan keamanan dan kecepatan transaksi cahaya.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="tag text-[10px] uppercase font-bold px-4 py-1.5 rounded-full text-blue-300">Solidity</span>
@@ -71,7 +106,7 @@
                     <div class="absolute bottom-4 right-6 text-white/5 font-black text-6xl italic">02</div>
                 </div>
                 <div class="p-10">
-                    <h3 class="font-bold text-3xl mb-4 text-white group-hover:text-purple-400 transition">proyek 2</h3>
+                    <h3 class="font-bold text-3xl mb-4 text-white group-hover:text-purple-400 transition">Astro-Bot</h3>
                     <p class="text-gray-400 leading-relaxed mb-8">Implementasi asisten berbasis AI untuk memproses navigasi Big Data dengan pemrosesan bahasa alami.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="tag text-[10px] uppercase font-bold px-4 py-1.5 rounded-full text-purple-300">Python</span>
@@ -87,7 +122,7 @@
                     <div class="absolute bottom-4 right-6 text-white/5 font-black text-6xl italic">03</div>
                 </div>
                 <div class="p-10">
-                    <h3 class="font-bold text-3xl mb-4 text-white group-hover:text-cyan-400 transition">proyek 3</h3>
+                    <h3 class="font-bold text-3xl mb-4 text-white group-hover:text-cyan-400 transition">Nebula OS</h3>
                     <p class="text-gray-400 leading-relaxed mb-8">Simulasi antarmuka sistem operasi futuristik yang berjalan sepenuhnya di browser menggunakan WebGL.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="tag text-[10px] uppercase font-bold px-4 py-1.5 rounded-full text-cyan-300">Three.js</span>
@@ -97,5 +132,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
