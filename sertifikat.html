@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sertifikat Keahlian</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link class="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
-        body { font-family: 'Space Grotesk', sans-serif; background-color: #020617; color: #f8fafc; }
+        
+        body { 
+            font-family: 'Space Grotesk', sans-serif; 
+            background-color: #020617; 
+            color: #f8fafc; 
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
         .glass-card {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
             backdrop-filter: blur(12px);
@@ -22,13 +30,41 @@
         .cert-glow {
             filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
         }
+        .glow-text { text-shadow: 0 0 15px rgba(59, 130, 246, 0.6); }
     </style>
 </head>
-<body class="py-24 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+<body class="pt-28 pb-24 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-blue-500/20 px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold text-blue-400 tracking-tighter glow-text">ASTRO<span class="text-white">PORT</span></div>
+        <div class="hidden md:flex space-x-4 text-sm items-center">
+            <a href="profil.html" class="px-4 py-1.5 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-white/5 transition">Profil</a>
+            <a href="cv.html" class="px-4 py-1.5 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-white/5 transition">CV</a>
+            <a href="karya.html" class="px-4 py-1.5 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-white/5 transition">Karya</a>
+            <a href="sertifikat.html" class="px-4 py-1.5 rounded-lg text-blue-400 bg-blue-500/10 border border-blue-500/30 transition shadow-[0_0_15px_rgba(59,130,246,0.2)]">Sertifikat</a>
+            <a href="refleksi.html" class="px-4 py-1.5 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-white/5 transition">Refleksi</a>
+            <a href="kontak.html" class="ml-4 px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold transition shadow-lg shadow-blue-500/30">Hubungi Saya</a>
+        </div>
+        <button class="md:hidden text-white hover:text-blue-400 transition" onclick="toggleMenu()">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden fixed top-[64px] left-0 w-full bg-slate-950/95 backdrop-blur-lg border-b border-blue-500/20 z-40 md:hidden flex flex-col p-6 space-y-4">
+        <a href="profil.html" class="text-gray-300 hover:text-blue-400">Profil</a>
+        <a href="cv.html" class="text-gray-300 hover:text-blue-400">CV</a>
+        <a href="karya.html" class="text-gray-300 hover:text-blue-400">Karya</a>
+        <a href="sertifikat.html" class="text-blue-400 font-bold">Sertifikat</a>
+        <a href="refleksi.html" class="text-gray-300 hover:text-blue-400">Refleksi</a>
+        <a href="kontak.html" class="text-white bg-blue-600 text-center py-2.5 rounded-full font-bold">Hubungi Saya</a>
+    </div>
+
     <div class="max-w-5xl mx-auto px-4">
         <div class="flex items-center justify-center gap-4 mb-16">
             <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-blue-500/50"></div>
-            <h2 class="text-4xl font-bold text-blue-400 tracking-widest uppercase">Pencapaian</h2>
+            <h2 class="text-4xl font-bold text-blue-400 tracking-widest uppercase glow-text">Pencapaian</h2>
             <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-blue-500/50"></div>
         </div>
 
@@ -62,5 +98,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
